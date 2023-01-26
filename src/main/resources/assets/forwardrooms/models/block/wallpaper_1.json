@@ -1,7 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "forwardrooms:block/mold_block",
+    "all": "forwardrooms:block/wallpaper_1"
   }
-
 }
