@@ -29,12 +29,12 @@ displayName="Forward Rooms" #mandatory
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="examplemod.png" #optional
 # A text field displayed in the mod UI
-credits="Thanks for this example mod goes to Java" #optional
+credits="Special thanks to FalcaoMax and Vascoides for making the textures much love" #optional
 # A text field displayed in the mod UI
-authors="Love, Cheese and small house plants" #optional
+authors="Ramen Gang" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-This is a long form description of the mod. You can write whatever you want here
+MagicFGH was here! <3
 
 Have some lorem ipsum.
 

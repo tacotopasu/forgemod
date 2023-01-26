@@ -1,6 +1,11 @@
 {
-  "parent": "block/cube_all",
+  "parent": "block/cube",
   "textures": {
-    "all": "forwardrooms:block/wallpaper_1"
+    "up": "forwardrooms:block/floor",
+    "down": "forwardrooms:block/cealing",
+    "north": "forwardrooms:block/wallpaper_1",
+    "east": "forwardrooms:block/wallpaper_1",
+    "south": "forwardrooms:block/wallpaper_1",
+    "west": "forwardrooms:block/wallpaper_1"
   }
 }
