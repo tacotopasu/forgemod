@@ -1,5 +1,6 @@
 {
   "itemGroup.ForwardRoomsTab": "Forward Rooms",
-  "block.forwardrooms.wallpaper_1": "Wallpaper 1",
-  "block.forwardrooms.light": "Light",
+  "item.forwardrooms.almond_water": "Almond Water",
+  "block.forwardrooms.wallpaper": "Wallpaper",
+  "block.forwardrooms.light": "Light"
 }
