@@ -2,5 +2,7 @@
   "itemGroup.ForwardRoomsTab": "Forward Rooms",
   "item.forwardrooms.almond_water": "Almond Water",
   "block.forwardrooms.wallpaper": "Wallpaper",
-  "block.forwardrooms.light": "Light"
+  "block.forwardrooms.light": "Light",
+  "item.forwardrooms.almond_bucket": "Almond Water Bucket",
+  "fluid.forwardrooms.almond": "Almond"
 }

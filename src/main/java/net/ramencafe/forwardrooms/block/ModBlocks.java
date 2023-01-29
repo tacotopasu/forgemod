@@ -19,7 +19,8 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ForwardRooms.MOD_ID);
 
     public static final RegistryObject<Block> WALLPAPER = registerBlock("wallpaper", () -> new Block(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(50)));
-    public static final RegistryObject<Block> LIGHTS_YES = registerBlock("light", () -> new Block(AbstractBlock.Properties.create(Material.ROCK).setLightLevel(value -> 10)));
+    public static final RegistryObject<Block> LIGHT = registerBlock("light", () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+            .setLightLevel(value -> 10)));
 
     // Never use capital chars in item names!!!
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
@@ -36,6 +37,5 @@ public class ModBlocks {
 
     public static void register(IEventBus eventBus){
      BLOCKS.register(eventBus);
-    } // Isto da loop infinito, ve se escreveste igual ao do gajo, e btw o nome de blocos pode ter
-      // letras maiusculas, estava Mold_block em vez de mold_block ou items n
+    }
 }

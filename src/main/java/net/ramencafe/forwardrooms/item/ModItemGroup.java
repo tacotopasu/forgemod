@@ -14,7 +14,7 @@ public class ModItemGroup {
         {
             return new ItemStack(ModBlocks.WALLPAPER.get());
         }
-        //Adds an icon to the ModTab
+        //Adds an icon to the ModTab using a block as an asset
     };
 
 }

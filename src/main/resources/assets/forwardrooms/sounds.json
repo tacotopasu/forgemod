@@ -1,0 +1,9 @@
+{
+  "buzzing": {
+    "category": "blocks",
+    "subtitle": "forwardrooms.buzzing",
+    "sounds": [
+      "forwardrooms:buzzing"
+    ]
+  }
+}

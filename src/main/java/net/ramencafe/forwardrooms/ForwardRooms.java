@@ -2,6 +2,8 @@ package net.ramencafe.forwardrooms;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -15,7 +17,9 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.ramencafe.forwardrooms.block.ModBlocks;
+import net.ramencafe.forwardrooms.fluid.ModFluids;
 import net.ramencafe.forwardrooms.item.ModItems;
+import net.ramencafe.forwardrooms.util.ModSoundEvents;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -35,6 +39,8 @@ public class ForwardRooms
 
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+        ModFluids.register(eventBus);
+        ModSoundEvents.register(eventBus);
 
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
@@ -57,6 +63,14 @@ public class ForwardRooms
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
+        event.enqueueWork(() -> {
+
+            RenderTypeLookup.setRenderLayer(ModFluids.ALMOND_FLUID.get(), RenderType.getTranslucent());
+            RenderTypeLookup.setRenderLayer(ModFluids.ALMOND_BLOCK.get(), RenderType.getTranslucent());
+            RenderTypeLookup.setRenderLayer(ModFluids.ALMOND_FLOWING.get(), RenderType.getTranslucent());
+
+
+        });
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
