@@ -19,19 +19,30 @@ public class FirestoneBlock extends Block {
     public FirestoneBlock(Properties properties) {
         super(properties);
     }
-
+    int count = 0;
     @SuppressWarnings("deprecation")
     @Override
-    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player,
-                                             Hand handIn, BlockRayTraceResult hit) {
-        if(worldIn.isPlayerWithin(-124, 4, 132,4)) {
-            System.out.println("I right-clicked a FirestoneBlock. Called for the Main Hand!");
+    public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+
+        while (count != 160) {
+            count++;
+        }
+        if (count == 160) {
+            //Play sound here
+            count = 0;
+            System.out.println(" TICK IS WORKING YES");
+            System.out.println("It worked somehow!");
             worldIn.playSound(null, pos, ModSoundEvents.BUZZING.get()
                     , SoundCategory.BLOCKS, 1, 1);
+        }
+
+            if (worldIn.isPlayerWithin(pos.getX(), pos.getY(), pos.getZ(), 7)) {
+                System.out.println("It worked somehow!");
+                worldIn.playSound(null, pos, ModSoundEvents.BUZZING.get()
+                        , SoundCategory.BLOCKS, 1, 1);
+            }
             return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
         }
-        return super.onBlockActivated(state, worldIn, pos, player, handIn, hit);
-    }
 
     @Override
     public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
@@ -47,13 +58,5 @@ public class FirestoneBlock extends Block {
         }
 
         super.animateTick(stateIn, worldIn, pos, rand);
-    }
-
-    @SuppressWarnings("deprecation")
-    @Override
-    public void onBlockClicked(BlockState state, World worldIn, BlockPos pos, PlayerEntity player) {
-        if(!worldIn.isRemote()) {
-            System.out.println("I left-clicked a FirestoneBlock");
-        }
     }
 }

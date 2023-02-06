@@ -5,11 +5,13 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.ramencafe.forwardrooms.ForwardRooms;
+import net.ramencafe.forwardrooms.block.custom.FirestoneBlock;
 import net.ramencafe.forwardrooms.item.ModItemGroup;
 import net.ramencafe.forwardrooms.item.ModItems;
 
@@ -18,9 +20,13 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ForwardRooms.MOD_ID);
 
-    public static final RegistryObject<Block> WALLPAPER = registerBlock("wallpaper", () -> new Block(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(50)));
+    public static final RegistryObject<Block> WALLPAPER = registerBlock("wallpaper", () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
+            .hardnessAndResistance(100)));
     public static final RegistryObject<Block> LIGHT = registerBlock("light", () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
-            .setLightLevel(value -> 10)));
+            .setLightLevel(value -> 10).hardnessAndResistance(100)));
+    public static final RegistryObject<Block> FIRESTONE_BLOCK = registerBlock("firestone_block",
+            () -> new FirestoneBlock(AbstractBlock.Properties.create(Material.IRON)
+                    .harvestLevel(2).setRequiresTool().harvestTool(ToolType.PICKAXE).hardnessAndResistance(6f)));
 
     // Never use capital chars in item names!!!
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
