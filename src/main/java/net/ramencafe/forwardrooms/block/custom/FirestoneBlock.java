@@ -24,7 +24,7 @@ public class FirestoneBlock extends Block {
     @Override
     public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player,
                                              Hand handIn, BlockRayTraceResult hit) {
-        if(worldIn.isPlayerWithin(-124, 4, 131,4)) {
+        if(worldIn.isPlayerWithin(-124, 4, 132,4)) {
             System.out.println("I right-clicked a FirestoneBlock. Called for the Main Hand!");
             worldIn.playSound(null, pos, ModSoundEvents.BUZZING.get()
                     , SoundCategory.BLOCKS, 1, 1);
